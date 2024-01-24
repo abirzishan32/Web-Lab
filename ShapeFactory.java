@@ -1,23 +1,6 @@
 import java.util.Scanner;
-public interface Shape {
-    void draw();
-    }
-    public class Rectangle implements Shape {
-    @Override
-    public void draw() {
-    System.out.println("Inside Rectangle::draw() method.");
-        }
-    }
-    public class Square implements Shape {
-    @Override
-    public void draw() {
-    System.out.println("Inside Square::draw() method.");
-        }
-    }
-    
 
-
-class ShapeFactory implements Shape{
+class ShapeFactory{
     private static ShapeFactory instance;
     private ShapeFactory(){}
     public static ShapeFactory getInstance(){
@@ -48,17 +31,11 @@ class ShapeFactory implements Shape{
 public class FactoryPatternDemo {
     public static void main(String[] args) {
     ShapeFactory shapeFactory;
-    
     Shape shape1 = shapeFactory.getShape("CIRCLE");
-    
     shape1.draw();
-  
     Shape shape2 = shapeFactory.getShape("RECTANGLE");
- 
     shape2.draw();
- 
     Shape shape3 = shapeFactory.getShape("SQUARE");
-
     shape3.draw();
     }
 }
